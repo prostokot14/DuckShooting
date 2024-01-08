@@ -9,6 +9,7 @@ import SpriteKit
 
 class GameScene: SKScene {
     private var scoreLabel: SKLabelNode!
+    private var timerLabel: SKLabelNode!
     
     override func didMove(to view: SKView) {
         let background = SKSpriteNode(imageNamed: "Background")
@@ -23,5 +24,12 @@ class GameScene: SKScene {
         scoreLabel.horizontalAlignmentMode = .left
         scoreLabel.fontSize = 48
         addChild(scoreLabel)
+        
+        timerLabel = SKLabelNode(fontNamed: "Chalkduster")
+        timerLabel.text = "60s"
+        timerLabel.position = CGPoint(x: 552, y: 720)
+        timerLabel.horizontalAlignmentMode = .right
+        timerLabel.fontSize = 48
+        addChild(timerLabel)
     }
 }
