@@ -14,6 +14,7 @@
 		CBF4F83A2B4C742F0010AAD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF4F8382B4C742F0010AAD4 /* Main.storyboard */; };
 		CBF4F83C2B4C74300010AAD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBF4F83B2B4C74300010AAD4 /* Assets.xcassets */; };
 		CBF4F83F2B4C74300010AAD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF4F83D2B4C74300010AAD4 /* LaunchScreen.storyboard */; };
+		CBF4F84A2B4C7D790010AAD4 /* WaveNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4F8492B4C7D790010AAD4 /* WaveNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		CBF4F8462B4C76E80010AAD4 /* roll1n_to-aim.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "roll1n_to-aim.caf"; sourceTree = "<group>"; };
 		CBF4F8472B4C76E80010AAD4 /* reload.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = reload.caf; sourceTree = "<group>"; };
 		CBF4F8482B4C76E80010AAD4 /* gun-sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gun-sound.caf"; sourceTree = "<group>"; };
+		CBF4F8492B4C7D790010AAD4 /* WaveNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				CBF4F82E2B4C742F0010AAD4 /* AppDelegate.swift */,
 				CBF4F8302B4C742F0010AAD4 /* GameScene.sks */,
 				CBF4F8342B4C742F0010AAD4 /* GameScene.swift */,
+				CBF4F8492B4C7D790010AAD4 /* WaveNode.swift */,
 				CBF4F8362B4C742F0010AAD4 /* GameViewController.swift */,
 				CBF4F8382B4C742F0010AAD4 /* Main.storyboard */,
 				CBF4F83B2B4C74300010AAD4 /* Assets.xcassets */,
@@ -150,6 +153,7 @@
 			files = (
 				CBF4F8352B4C742F0010AAD4 /* GameScene.swift in Sources */,
 				CBF4F8372B4C742F0010AAD4 /* GameViewController.swift in Sources */,
+				CBF4F84A2B4C7D790010AAD4 /* WaveNode.swift in Sources */,
 				CBF4F82F2B4C742F0010AAD4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

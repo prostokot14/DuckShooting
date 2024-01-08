@@ -13,6 +13,8 @@ class GameScene: SKScene {
     private var gameOverLabel: SKLabelNode!
     private var newGameLabel: SKLabelNode!
     
+    private var waves = [WaveType: WaveNode]()
+    
     override func didMove(to view: SKView) {
         let background = SKSpriteNode(imageNamed: "Background")
         background.position = CGPoint(x: 512, y: 384)
@@ -48,5 +50,17 @@ class GameScene: SKScene {
         newGameLabel.name = "newGame"
         newGameLabel.fontSize = 38
         newGameLabel.zPosition = 1
+        
+        addWave(at: CGPoint(x: -82, y: 350), zPosition: 0, xScale: 1, direction: .right)
+        addWave(at: CGPoint(x: -82, y: 200), zPosition: 0.2, xScale: 0.75, direction: .left)
+        addWave(at: CGPoint(x: -82, y: 50), zPosition: 0.4, xScale: 0.5, direction: .right)
+    }
+    
+    private func addWave(at position: CGPoint, zPosition: CGFloat, xScale: CGFloat, direction: WaveDirection) {
+        let wave = WaveNode()
+        wave.configure(at: position, xScale: xScale, direction: direction)
+        wave.zPosition = zPosition
+        addChild(wave)
+//        wave.animate()
     }
 }
