@@ -10,6 +10,8 @@ import SpriteKit
 class GameScene: SKScene {
     private var scoreLabel: SKLabelNode!
     private var timerLabel: SKLabelNode!
+    private var gameOverLabel: SKLabelNode!
+    private var newGameLabel: SKLabelNode!
     
     override func didMove(to view: SKView) {
         let background = SKSpriteNode(imageNamed: "Background")
@@ -31,5 +33,20 @@ class GameScene: SKScene {
         timerLabel.horizontalAlignmentMode = .right
         timerLabel.fontSize = 48
         addChild(timerLabel)
+        
+        gameOverLabel = SKLabelNode(fontNamed: "Chalkduster")
+        gameOverLabel.text = "Game Over"
+        gameOverLabel.position = CGPoint(x: 512, y: 384)
+        gameOverLabel.horizontalAlignmentMode = .center
+        gameOverLabel.fontSize = 68
+        gameOverLabel.zPosition = 1
+        
+        newGameLabel = SKLabelNode(fontNamed: "Chalkduster")
+        newGameLabel.text = "New Game"
+        newGameLabel.position = CGPoint(x: 512, y: 324)
+        newGameLabel.horizontalAlignmentMode = .center
+        newGameLabel.name = "newGame"
+        newGameLabel.fontSize = 38
+        newGameLabel.zPosition = 1
     }
 }
