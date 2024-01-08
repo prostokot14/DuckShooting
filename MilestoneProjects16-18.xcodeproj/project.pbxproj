@@ -25,6 +25,10 @@
 		CBF4F8392B4C742F0010AAD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CBF4F83B2B4C74300010AAD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBF4F83E2B4C74300010AAD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CBF4F8452B4C76E80010AAD4 /* analog-alarm-clock.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "analog-alarm-clock.caf"; sourceTree = "<group>"; };
+		CBF4F8462B4C76E80010AAD4 /* roll1n_to-aim.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "roll1n_to-aim.caf"; sourceTree = "<group>"; };
+		CBF4F8472B4C76E80010AAD4 /* reload.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = reload.caf; sourceTree = "<group>"; };
+		CBF4F8482B4C76E80010AAD4 /* gun-sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gun-sound.caf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,10 @@
 				CBF4F8382B4C742F0010AAD4 /* Main.storyboard */,
 				CBF4F83B2B4C74300010AAD4 /* Assets.xcassets */,
 				CBF4F83D2B4C74300010AAD4 /* LaunchScreen.storyboard */,
+				CBF4F8452B4C76E80010AAD4 /* analog-alarm-clock.caf */,
+				CBF4F8482B4C76E80010AAD4 /* gun-sound.caf */,
+				CBF4F8462B4C76E80010AAD4 /* roll1n_to-aim.caf */,
+				CBF4F8472B4C76E80010AAD4 /* reload.caf */,
 			);
 			path = "MilestoneProjects16-18";
 			sourceTree = "<group>";
