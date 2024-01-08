@@ -7,7 +7,6 @@
 
 import UIKit
 import SpriteKit
-import GameplayKit
 
 class GameViewController: UIViewController {
 
@@ -33,13 +32,13 @@ class GameViewController: UIViewController {
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         if UIDevice.current.userInterfaceIdiom == .phone {
-            return .allButUpsideDown
+            .allButUpsideDown
         } else {
-            return .all
+            .all
         }
     }
 
     override var prefersStatusBarHidden: Bool {
-        return true
+        true
     }
 }
