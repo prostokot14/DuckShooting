@@ -44,9 +44,27 @@ final class WaveNode: SKNode {
         }
     }
     
+    func animate() {
+        let rotateCW = SKAction.rotate(byAngle: CGFloat.pi / 128, duration: getDuration())
+        let rotateCCW = SKAction.rotate(byAngle: CGFloat.pi / -128, duration: getDuration())
+        let goDown = SKAction.moveBy(x: 0, y: -20, duration: getDuration())
+        let goUp = SKAction.moveBy(x: 0, y: 20, duration: getDuration())
+        let goLeft = SKAction.moveBy(x: -20, y: 0, duration: getDuration())
+        let goRight = SKAction.moveBy(x: 20, y: 0, duration: getDuration())
+        
+        let sequence1 = SKAction.sequence([rotateCW, goDown, goLeft, rotateCCW, goUp, rotateCCW, goDown, goRight, rotateCW, goUp])
+        let sequence2 = SKAction.sequence([rotateCCW, goUp, goRight, rotateCW, goDown, rotateCW, goUp, goLeft, rotateCCW, goDown])
+        guard let sequence = [sequence1, sequence2].randomElement() else { return }
+        run(SKAction.repeatForever(sequence))
+    }
+    
     private func addWave(x: Int, y: Int) {
         let wave = SKSpriteNode(imageNamed: "Water")
         wave.position = CGPoint(x: x, y: y)
         addChild(wave)
+    }
+    
+    private func getDuration() -> Double {
+        Double.random(in: 0.2...0.6)
     }
 }

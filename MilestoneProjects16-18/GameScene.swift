@@ -118,7 +118,7 @@ class GameScene: SKScene {
         wave.configure(at: position, xScale: xScale, direction: direction)
         wave.zPosition = zPosition
         addChild(wave)
-//        wave.animate()
+        wave.animate()
         return wave
     }
     
