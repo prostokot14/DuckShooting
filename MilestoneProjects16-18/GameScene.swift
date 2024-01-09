@@ -16,6 +16,11 @@ class GameScene: SKScene {
     private var waves = [WaveType: WaveNode]()
     private var bullets: BulletsNode!
     
+    private var fireSound: SKAction!
+    private var emptyGunSound: SKAction!
+    private var reloadSound: SKAction!
+    private var alarmSound: SKAction!
+    
     override func didMove(to view: SKView) {
         let background = SKSpriteNode(imageNamed: "Background")
         background.position = CGPoint(x: 512, y: 384)
@@ -60,6 +65,13 @@ class GameScene: SKScene {
         bullets.configure(at: CGPoint(x: 875, y: 735))
         bullets.name = "bullets"
         addChild(bullets)
+        
+        physicsWorld.gravity = .zero
+        
+        fireSound = SKAction.playSoundFileNamed("fire-sound.caf", waitForCompletion: false)
+        emptyGunSound = SKAction.playSoundFileNamed("empty-gun-sound.caf", waitForCompletion: false)
+        reloadSound = SKAction.playSoundFileNamed("reload-sound.caf", waitForCompletion: false)
+        alarmSound = SKAction.playSoundFileNamed("alarm-sound.caf", waitForCompletion: false)
     }
     
     private func addWave(at position: CGPoint, zPosition: CGFloat, xScale: CGFloat, direction: WaveDirection) {
