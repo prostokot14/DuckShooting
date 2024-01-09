@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		CB1913692B4D87CB00F47725 /* BulletsNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1913682B4D87CB00F47725 /* BulletsNode.swift */; };
 		CB19136B2B4D90BF00F47725 /* DuckNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB19136A2B4D90BF00F47725 /* DuckNode.swift */; };
+		CB1913902B4DB09B00F47725 /* alarm-sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = CBF4F8452B4C76E80010AAD4 /* alarm-sound.caf */; };
+		CB1913912B4DB09E00F47725 /* fire-sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = CBF4F8482B4C76E80010AAD4 /* fire-sound.caf */; };
+		CB1913922B4DB0A000F47725 /* empty-gun-sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = CBF4F8462B4C76E80010AAD4 /* empty-gun-sound.caf */; };
+		CB1913932B4DB0A300F47725 /* reload-sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = CBF4F8472B4C76E80010AAD4 /* reload-sound.caf */; };
 		CBF4F82F2B4C742F0010AAD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4F82E2B4C742F0010AAD4 /* AppDelegate.swift */; };
 		CBF4F8312B4C742F0010AAD4 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CBF4F8302B4C742F0010AAD4 /* GameScene.sks */; };
 		CBF4F8352B4C742F0010AAD4 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4F8342B4C742F0010AAD4 /* GameScene.swift */; };
@@ -145,6 +149,10 @@
 			files = (
 				CBF4F83A2B4C742F0010AAD4 /* Main.storyboard in Resources */,
 				CBF4F8312B4C742F0010AAD4 /* GameScene.sks in Resources */,
+				CB1913922B4DB0A000F47725 /* empty-gun-sound.caf in Resources */,
+				CB1913912B4DB09E00F47725 /* fire-sound.caf in Resources */,
+				CB1913902B4DB09B00F47725 /* alarm-sound.caf in Resources */,
+				CB1913932B4DB0A300F47725 /* reload-sound.caf in Resources */,
 				CBF4F83C2B4C74300010AAD4 /* Assets.xcassets in Resources */,
 				CBF4F83F2B4C74300010AAD4 /* LaunchScreen.storyboard in Resources */,
 			);
