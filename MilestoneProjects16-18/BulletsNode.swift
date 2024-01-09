@@ -8,6 +8,12 @@
 import SpriteKit
 
 final class BulletsNode: SKNode {
+    private var bullets = [SKSpriteNode]()
+    private var bulletsCount = 6
+    
+    private let loadedTexture = SKTexture(imageNamed: "icon_bullet_gold_long")
+    private let emptyTexture = SKTexture(imageNamed: "icon_bullet_empty_long")
+    
     func configure(at position: CGPoint) {
         self.position = position
         
@@ -22,6 +28,13 @@ final class BulletsNode: SKNode {
         transparency.size = CGSize(width: 200, height: 150)
         transparency.position = CGPoint(x: -100, y: -75)
         addChild(transparency)
+    }
+    
+    func reload() {
+        for bullet in bullets {
+            bullet.texture = loadedTexture
+        }
+        bulletsCount = 6
     }
     
     private func addBullet(at x: Int) {
