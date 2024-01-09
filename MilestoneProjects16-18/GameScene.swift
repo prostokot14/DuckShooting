@@ -14,6 +14,7 @@ class GameScene: SKScene {
     private var newGameLabel: SKLabelNode!
     
     private var waves = [WaveType: WaveNode]()
+    private var bullets: BulletsNode!
     
     override func didMove(to view: SKView) {
         let background = SKSpriteNode(imageNamed: "Background")
@@ -54,6 +55,11 @@ class GameScene: SKScene {
         addWave(at: CGPoint(x: -82, y: 350), zPosition: 0, xScale: 1, direction: .right)
         addWave(at: CGPoint(x: -82, y: 200), zPosition: 0.2, xScale: 0.75, direction: .left)
         addWave(at: CGPoint(x: -82, y: 50), zPosition: 0.4, xScale: 0.5, direction: .right)
+        
+        bullets = BulletsNode()
+        bullets.configure(at: CGPoint(x: 875, y: 735))
+        bullets.name = "bullets"
+        addChild(bullets)
     }
     
     private func addWave(at position: CGPoint, zPosition: CGFloat, xScale: CGFloat, direction: WaveDirection) {

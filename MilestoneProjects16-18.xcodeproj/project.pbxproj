@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB1913692B4D87CB00F47725 /* BulletsNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1913682B4D87CB00F47725 /* BulletsNode.swift */; };
 		CBF4F82F2B4C742F0010AAD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4F82E2B4C742F0010AAD4 /* AppDelegate.swift */; };
 		CBF4F8312B4C742F0010AAD4 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = CBF4F8302B4C742F0010AAD4 /* GameScene.sks */; };
 		CBF4F8352B4C742F0010AAD4 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF4F8342B4C742F0010AAD4 /* GameScene.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB1913682B4D87CB00F47725 /* BulletsNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletsNode.swift; sourceTree = "<group>"; };
 		CBF4F82B2B4C742F0010AAD4 /* MilestoneProjects16-18.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MilestoneProjects16-18.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBF4F82E2B4C742F0010AAD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBF4F8302B4C742F0010AAD4 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				CBF4F8302B4C742F0010AAD4 /* GameScene.sks */,
 				CBF4F8342B4C742F0010AAD4 /* GameScene.swift */,
 				CBF4F8492B4C7D790010AAD4 /* WaveNode.swift */,
+				CB1913682B4D87CB00F47725 /* BulletsNode.swift */,
 				CBF4F8362B4C742F0010AAD4 /* GameViewController.swift */,
 				CBF4F8382B4C742F0010AAD4 /* Main.storyboard */,
 				CBF4F83B2B4C74300010AAD4 /* Assets.xcassets */,
@@ -152,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBF4F8352B4C742F0010AAD4 /* GameScene.swift in Sources */,
+				CB1913692B4D87CB00F47725 /* BulletsNode.swift in Sources */,
 				CBF4F8372B4C742F0010AAD4 /* GameViewController.swift in Sources */,
 				CBF4F84A2B4C7D790010AAD4 /* WaveNode.swift in Sources */,
 				CBF4F82F2B4C742F0010AAD4 /* AppDelegate.swift in Sources */,
