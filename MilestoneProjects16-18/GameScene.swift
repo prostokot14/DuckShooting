@@ -8,6 +8,8 @@
 import SpriteKit
 
 class GameScene: SKScene {
+    // MARK: - Private Properties
+    
     private var scoreLabel: SKLabelNode!
     private var timerLabel: SKLabelNode!
     private var gameOverLabel: SKLabelNode!
@@ -36,6 +38,8 @@ class GameScene: SKScene {
             timerLabel.text = "\(timer)s"
         }
     }
+    
+    // MARK: - SKScene
     
     override func didMove(to view: SKView) {
         let background = SKSpriteNode(imageNamed: "Background")
@@ -92,6 +96,8 @@ class GameScene: SKScene {
         startGame()
     }
     
+    // MARK: - Private Properties
+    
     private func startGame() {
         score = 0
         timer = 60
@@ -110,7 +116,11 @@ class GameScene: SKScene {
     }
     
     private func gameOver() {
+        duckTimer?.invalidate()
+        gameTimer?.invalidate()
         
+        addChild(gameOverLabel)
+        addChild(newGameLabel)
     }
     
     private func addWave(at position: CGPoint, zPosition: CGFloat, xScale: CGFloat, direction: WaveDirection) -> WaveNode {
