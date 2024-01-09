@@ -203,4 +203,128 @@ class GameScene: SKScene {
         durations[.center]? *= 0.996
         durations[.top]? *= 0.996
     }
+    
+    private func showReload() {
+        let reloadLabel = SKLabelNode(fontNamed: "Chalkduster")
+        reloadLabel.text = "RELOAD"
+        reloadLabel.position = CGPoint(x: 512, y: 384)
+        reloadLabel.horizontalAlignmentMode = .center
+        reloadLabel.fontSize = 80
+        reloadLabel.fontColor = .red
+        reloadLabel.zPosition = 1
+        addChild(reloadLabel)
+        
+        reloadLabel.run(SKAction.sequence([
+            SKAction.fadeOut(withDuration: 0.5),
+            SKAction.customAction(withDuration: 0) { reloadLabel, _ in
+                reloadLabel.removeFromParent()
+            }
+        ]))
+    }
+    
+    private func showTappedScore(score: Int, position: CGPoint) {
+        var scoreText = ""
+        var textColor: UIColor!
+        var outlineColor: UIColor!
+        
+        if score > 0 {
+            scoreText += "+"
+            textColor = UIColor(red: 0, green: 0.7, blue: 0, alpha: 1)
+            outlineColor = .green
+        } else {
+            textColor = UIColor(red: 0.7, green: 0, blue: 0, alpha: 1)
+            outlineColor = UIColor(red: 1, green: 0.45, blue: 0.45, alpha: 1)
+        }
+        scoreText += String(score)
+        
+        let scoreLabel = SKLabelNode()
+        scoreLabel.horizontalAlignmentMode = .center
+        scoreLabel.position = position
+        scoreLabel.zPosition = 1
+        scoreLabel.attributedText = getAttributedText(for: scoreText, textColor: textColor, outlineColor: outlineColor)
+        addChild(scoreLabel)
+        
+        scoreLabel.run(SKAction.sequence([
+            SKAction.fadeOut(withDuration: 1),
+            SKAction.customAction(withDuration: 1) { scoreLabel, _ in
+                scoreLabel.removeFromParent()
+            }
+        ]))
+    }
+    
+    private func getAttributedText(for text: String, textColor: UIColor, outlineColor: UIColor) -> NSMutableAttributedString {
+        let attributedString = NSMutableAttributedString(string: text)
+        let range = NSMakeRange(0, attributedString.length)
+        attributedString.addAttribute(.font, value: UIFont(name: "Chalkduster", size: 38) as Any, range: range)
+        attributedString.addAttribute(.foregroundColor, value: textColor as Any, range: range)
+        attributedString.addAttribute(.strokeColor, value: outlineColor as Any, range: range)
+        attributedString.addAttribute(.strokeWidth, value: -3, range: range)
+        return attributedString
+    }
+    
+    // MARK: - UIResponder
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else { return }
+        let location = touch.location(in: self)
+        let tappedNodes = nodes(at: location)
+        
+        var duckTapped = false
+        
+        for tappedNode in tappedNodes {
+            if tappedNode.name == "newGame" {
+                startGame()
+                return
+            }
+            
+            //game is on
+            if timer > 0 {
+                if tappedNode.name == "duck" {
+                    duckTapped = true
+                    
+                    // check bullets
+                    if !bullets.remains() {
+                        showReload()
+                        return
+                    }
+                    bullets.decrease()
+                    
+                    // duck successfully tapped
+                    if let duck = tappedNode as? DuckNode {
+                        score += duck.points
+                        showTappedScore(score: duck.points, position: location)
+                    }
+                    
+                    tappedNode.removeFromParent()
+                    
+                    run(fireSound)
+                    
+                    // sometimes multiple ducks are tapped, count the first one only
+                    break
+                }
+                
+                // reload bullets tapped
+                if tappedNode.name == "bullets" {
+                    bullets.reload()
+                    run(reloadSound)
+                    return
+                }
+                
+            }
+        }
+        
+        // game is on and tapped elsewhere than on a duck
+        if timer > 0 && !duckTapped {
+            if !bullets.remains() {
+                showReload()
+                return
+            }
+            bullets.decrease()
+            
+            score -= 50
+            showTappedScore(score: -50, position: location)
+            
+            run(fireSound)
+        }
+    }
 }

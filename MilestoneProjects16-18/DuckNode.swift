@@ -15,7 +15,8 @@ final class DuckNode: SKNode {
     static let duckColors = ["brown", "white", "yellow"]
     
     private var type: DuckType = .good
-    private var points = 100
+    
+    var points = 100
     
     func configure(at position: CGPoint, type: DuckType, points: Int, xScale: CGFloat, yScale: CGFloat) {
         self.type = type

@@ -19,7 +19,7 @@ final class BulletsNode: SKNode {
         
         var x = 0
         for _ in 1...6 {
-            addBullet(at: x)
+            bullets.append(addBullet(at: x))
             x += 25
         }
         
@@ -37,10 +37,24 @@ final class BulletsNode: SKNode {
         bulletsCount = 6
     }
     
-    private func addBullet(at x: Int) {
+    func remains() -> Bool {
+        bulletsCount > 0
+    }
+    
+    func decrease() {
+        if bulletsCount <= 0 {
+            return
+        }
+        
+        bulletsCount -= 1
+        bullets[bulletsCount].texture = emptyTexture
+    }
+    
+    private func addBullet(at x: Int) -> SKSpriteNode {
         let bullet = SKSpriteNode(imageNamed: "icon_bullet_gold_long")
         bullet.position = CGPoint(x: x, y: 0)
         bullet.zPosition = 1
         addChild(bullet)
+        return bullet
     }
 }
